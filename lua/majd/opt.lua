@@ -6,6 +6,8 @@ vim.opt.guicursor = ""
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
+vim.opt.clipboard = "unnamedplus"
+
 vim.opt.showmode = false
 
 vim.opt.inccommand = "split"
@@ -18,7 +20,6 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
 vim.opt.list = true
-vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 
 vim.opt.smartindent = true
 
