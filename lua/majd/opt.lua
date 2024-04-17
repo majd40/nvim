@@ -67,3 +67,10 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 
 -- Re-open at last position
 vim.cmd([[ au BufReadPost * if line("'\"") >= 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif ]])
+
+--copy the path
+vim.api.nvim_create_user_command("Cpath", function()
+    local path = vim.fn.expand("%:p")
+    vim.fn.setreg("+", path)
+    vim.notify('Copied "' .. path .. '" to the clipboard!')
+end, {})

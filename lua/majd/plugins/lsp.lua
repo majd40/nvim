@@ -71,6 +71,7 @@ return {
                 "lua_ls",
                 "rust_analyzer",
                 "tsserver",
+                "angularls@11.2.14"
             },
             handlers = {
                 function(server_name) -- default handler (optional)

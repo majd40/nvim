@@ -1,4 +1,4 @@
-return 	{ -- Autoformat
+return {  -- Autoformat
     "stevearc/conform.nvim",
     opts = {
         notify_on_error = false,
@@ -23,4 +23,3 @@ return 	{ -- Autoformat
         },
     },
 }
-
