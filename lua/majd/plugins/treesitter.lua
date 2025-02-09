@@ -1,3 +1,4 @@
+-- syntax highlighting and parsing tool
 return {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
@@ -5,34 +6,18 @@ return {
         ---@diagnostic disable-next-line: missing-fields
         require("nvim-treesitter.configs").setup({
             ensure_installed = {
-                "vimdoc", "javascript", "typescript", "c", "lua", "rust",
-                "jsdoc", "bash", "html", "markdown", "vim", "javascript",
-                "typescript", "html", "scss", "css", "python", "angular",
-                "java", "json", "sql",
+                "vimdoc", "javascript", "typescript", "lua",
+                "bash", "html", "markdown", "vim", "scss",
+                "css", "python", "java", "json", "sql"
             },
             sync_install = false,
             auto_install = true,
-            indent = {
-                enable = true
-            },
+            indent = { enable = true },
             highlight = {
                 enable = true,
-                additional_vim_regex_highlighting = { "markdown" },
+                additional_vim_regex_highlighting = false,
             },
-            matchup = {
-                enable = true
-            }
+            matchup = { enable = true }
         })
-
-        local treesitter_parser_config = require("nvim-treesitter.parsers").get_parser_configs()
-        treesitter_parser_config.templ = {
-            install_info = {
-                url = "https://github.com/vrischmann/tree-sitter-templ.git",
-                files = { "src/parser.c", "src/scanner.c" },
-                branch = "master",
-            },
-        }
-
-        vim.treesitter.language.register("templ", "templ")
     end
 }
